@@ -1,0 +1,108 @@
+body{
+      font-family: sans-serif;
+      background-color: rgb(153, 19, 202);
+      color: white;
+      p{
+            text-align: center;
+      }
+      h3{
+            text-align: center;
+      }
+      h2{
+            text-align: center;
+      }
+      button{
+            color: white;
+            background-color: rgb(75, 14, 181);
+            margin: 20px 20px 10px;
+            display: inline-block;
+            font-size: 15px;
+            padding: 12px 10px;
+            border-radius: 30px;
+            transition-duration: 0.4s;
+            text-align: center;
+        }
+        button:hover{
+            background-color: rgb(202, 25, 185);
+        }
+        button:active{
+              transform: translateY(4px);
+        }
+        ul{
+              list-style: none;
+        }
+      
+}
+nav{
+   background-color: rgb(153, 19, 202);
+   h1{
+         color: white;
+         margin: 10px 20px 10px;
+   }   
+   ul{
+         padding-left: opx;
+         text-align: center;
+   }
+   li{
+         display: inline-block;
+         padding: 10px 20px;
+
+      a{
+            color: white;
+            text-decoration: none;
+            transition-duration: 0.4s;
+      }
+      a:hover{
+            color: black;
+      }
+      }
+
+    div{
+          position: relative;
+          button{
+                color: white;
+                background-color: rgb(75, 14, 181);
+                margin: 20px 20px 10px;
+                display: inline-block;
+                font-size: 20px;
+                padding: 12px 28px;
+                border-radius: 30px;
+                transition-duration: 0.4s;
+                text-align: center;
+            }
+            button:hover{
+                background-color: rgb(202, 25, 185);
+            }
+            button:active{
+                  transform: translateY(4px);
+            }
+      }
+}
+img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+}
+
+.about{
+      text-align: center;
+}
+.about li{
+      display: inline-block;
+      padding: 20px;
+}
+.about li a{
+      margin: auto;
+      color: white;
+      text-decoration: none;
+}
+
+.about li a:hover{
+      color: black;
+}
+.form{
+      
+}
+
+

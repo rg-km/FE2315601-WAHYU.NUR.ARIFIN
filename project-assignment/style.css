@@ -1,0 +1,126 @@
+body {
+  font-family: sans-serif;
+  background-color: #9913ca;
+  color: white;
+}
+
+body p {
+  text-align: center;
+}
+
+body h3 {
+  text-align: center;
+}
+
+body h2 {
+  text-align: center;
+}
+
+body button {
+  color: white;
+  background-color: #4b0eb5;
+  margin: 20px 20px 10px;
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 10px;
+  border-radius: 30px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  text-align: center;
+}
+
+body button:hover {
+  background-color: #ca19b9;
+}
+
+body button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+body ul {
+  list-style: none;
+}
+
+nav {
+  background-color: #9913ca;
+}
+
+nav h1 {
+  color: white;
+  margin: 10px 20px 10px;
+}
+
+nav ul {
+  padding-left: opx;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+nav li a:hover {
+  color: black;
+}
+
+nav div {
+  position: relative;
+}
+
+nav div button {
+  color: white;
+  background-color: #4b0eb5;
+  margin: 20px 20px 10px;
+  display: inline-block;
+  font-size: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  text-align: center;
+}
+
+nav div button:hover {
+  background-color: #ca19b9;
+}
+
+nav div button:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.about {
+  text-align: center;
+}
+
+.about li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.about li a {
+  margin: auto;
+  color: white;
+  text-decoration: none;
+}
+
+.about li a:hover {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */
