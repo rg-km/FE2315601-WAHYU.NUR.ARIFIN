@@ -3,7 +3,7 @@ const num1 = parseInt(prompt("Masukan bilangan pertama: "));
 const num2 = parseInt(prompt("Masukan bilangan kedua: "));
 const num3 = parseInt(prompt("Masukan bilangan ketiga: "));
 
-let largest;
+let largest = Math.max(num1, num2, num3);
 
 // TODO: answer here
 
