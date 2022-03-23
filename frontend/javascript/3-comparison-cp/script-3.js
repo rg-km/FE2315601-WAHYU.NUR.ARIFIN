@@ -7,6 +7,7 @@
 
 // Masukan suatu angka
 const score = parseInt(prompt("Masukan nilai: "));
+
 let nilai;
 if (score <= 50) {
       nilai = "E";
@@ -38,3 +39,6 @@ switch (nilai) {
         break;
 }
 // TODO: answer here
+
+// TODO: answer here
+
