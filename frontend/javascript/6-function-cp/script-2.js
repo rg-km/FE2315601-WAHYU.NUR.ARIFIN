@@ -11,6 +11,17 @@
 
 function checkPalindrome(string) {
     // TODO: answer here
+    const arrayValues = string.split("");
+
+    const reverseArray = arrayValues.reverse();
+
+    const reverse = reverseArray.join("");
+
+    if(string == reverse){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 // masukan teks
