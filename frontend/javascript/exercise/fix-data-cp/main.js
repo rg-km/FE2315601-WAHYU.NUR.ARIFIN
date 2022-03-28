@@ -43,12 +43,13 @@ function fixData(line) {
    let countVokal = 0;
    let countKonsonan = 0;
    let countVirus = 0;
-   // masih memakai built in function
-   for(var i = 0; i < line.length; i++){
-      if(vokal.includes(line[i])){
+   
+   let arr = line.split('');
+   for(i = 0; i < arr.length; i++){
+      if(vokal == arr[i]){
             countVokal++;
       }
-      if(konsonan.includes(line[i])){
+      if(konsonan == arr[i]){
             countKonsonan++;
       }
       if(line[i] == '#'){
