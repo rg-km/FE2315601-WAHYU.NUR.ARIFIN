@@ -37,6 +37,55 @@
 
 function fixData(line) {
   // TODO: answer here
+   let vokal = ['a','i','u','e','o'];
+   let konsonan = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
+   let hasil = '';
+   let countVokal = 0;
+   let countKonsonan = 0;
+   let countVirus = 0;
+   // masih memakai built in function
+   for(var i = 0; i < line.length; i++){
+      if(vokal.includes(line[i])){
+            countVokal++;
+      }
+      if(konsonan.includes(line[i])){
+            countKonsonan++;
+      }
+      if(line[i] == '#'){
+            countVirus++;
+      }
+   }
+   if(countVokal > countKonsonan){
+      for(j = 0; j < line.length; j++){
+         if(line[j] == '#'){
+            hasil += 'b';
+         }else{
+            hasil += line[j];
+         }
+      }
+   }else if(countVokal < countKonsonan){
+      for(k = 0; k < line.length; k++){
+         if(line[k] == '#'){
+            hasil += '';
+         }else{
+            hasil += line[k];
+         }
+      }
+   }
+   if(countVokal == countKonsonan){
+      for(l = 0; l < line.length; l++){
+         if(line[l] == '#'){
+            hasil += 'c';
+         }else{
+            hasil += line[l];
+         }
+      }
+   }
+   if(countVirus == 0){
+      hasil = line;
+   }
+   return hasil;
+
 }
 
 console.log(fixData('aoi#fdg#ue'))

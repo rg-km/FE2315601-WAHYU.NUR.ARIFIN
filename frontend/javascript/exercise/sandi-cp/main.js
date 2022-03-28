@@ -21,8 +21,15 @@ Lengkapilah function dengan input kata sandi dan output terjemahannya
 
 function terjemahKataSandi(kataSandi) {
   // TODO: answer here
+  let kataSandiBaru = kataSandi.replace(/&/g, "")
+  kataSandiBaru = kataSandiBaru.replace(/%/g, "")
+  kataSandiBaru = kataSandiBaru.replace(/\^/g, "")
+  kataSandiBaru = kataSandiBaru.replace(/ /g, "E")
+  kataSandiBaru = kataSandiBaru.replace(/#/g, " ")
+  kataSandiBaru = kataSandiBaru.replace(/]/g, ",")
+  kataSandiBaru = kataSandiBaru.replace(/\+/g, "A")
+  return kataSandiBaru
 }
-
 
 console.log(terjemahKataSandi("&P%&+^S&^U&K+%N#1]#M&^+J^%%U#K #+^R&& +#2]#J+M#3#S^%%O&^R #"));
 // PASUKAN 1, MAJU KE AREA 2, JAM 3 SORE

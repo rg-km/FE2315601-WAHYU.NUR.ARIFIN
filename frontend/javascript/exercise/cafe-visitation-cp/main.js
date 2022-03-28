@@ -17,12 +17,31 @@
 
 // PSEUDOCODE :
 // TODO: answer here
+/*
+* if (name is empty) 
+*    then return "Anda tidak boleh masuk!"
+* else if (age is less than 17 AND money is >= 50000)
+*    then return "Anda bisa pesan juice. Sisa uang anda: <jumlah uang tersisa>"
+* else if (age is greater than 17 AND money is >= 300000)
+*    then return "Anda bisa pesan latte. Sisa uang anda: <jumlah uang tersisa>"
+* else if (money < 50000)
+*    then return "Uang tidak cukup. Anda harus pulang."
+*/
 
 function ruangCafe(name, age, money) {
   const juice = 50000;
   const latte = 300000;
 
   // TODO: answer here
+  if(name === '') {
+    return 'Anda tidak boleh masuk!';
+  } else if(age < 17 && money >= juice) {
+    return `Anda bisa pesan juice. Sisa uang anda: ${money - juice}`;
+  } else if(age >= 17 && money >= latte) {
+    return `Anda bisa pesan latte. Sisa uang anda: ${money - latte}`;
+  } else if(money < juice) {
+    return 'Uang tidak cukup. Anda harus pulang.';
+  }
 }
 
 console.log(ruangCafe('', 21, 2000000))

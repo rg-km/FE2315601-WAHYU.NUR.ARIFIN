@@ -8,6 +8,13 @@
 
 function angkaPalindrome(num) {
   // TODO: answer here
+  for(i = num; i < 500; i++){
+    let tostr = i.toString();
+    let reverse = tostr.split('').reverse().join('');
+    if(tostr == reverse){
+      return i;
+    }
+  }  
 }
 
 console.log(angkaPalindrome(10)); //11
