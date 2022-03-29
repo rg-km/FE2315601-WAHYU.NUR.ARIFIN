@@ -14,7 +14,15 @@ let arr = numInput.split(" ").map(Number);
 
 // jika tidak ada elemen dalam array, jika semua bilangan negatif, dapat mengembalikan nilai 0
 let maxSum = 0; 
-
 // TODO: answer here
-
+for(i = 0; i < arr.length; i++){
+      let sum = 0;
+      for(j = i; j < arr.length; j++){
+            sum += arr[j];
+            if(sum > maxSum){
+                  maxSum = sum;
+            }
+      }
+}
+console.log(arr);
 console.log(maxSum);
