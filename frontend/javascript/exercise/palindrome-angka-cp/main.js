@@ -8,14 +8,18 @@
 
 function angkaPalindrome(num) {
   // TODO: answer here
-  for(i = num; i < 500; i++){
-    let tostr = i.toString();
-    let reverse = tostr.split('').reverse().join('');
-    if(tostr == reverse){
-      return i;
+  for(num; num <= 1000; num++){
+    var numString = num.toString();
+    var numStringReversed = numString.split('').reverse().join('');
+    if(num <10){
+      return 11;
+    }else if(numString === numStringReversed){
+      return num;
     }
-  }  
-}
+  }
+};
+
+
 
 console.log(angkaPalindrome(10)); //11
 console.log(angkaPalindrome(17)); //22
