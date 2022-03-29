@@ -17,6 +17,17 @@
 function compareTriplets(a, b) {
   // Write your code here
   // TODO: answer here
+  let aCounter = 0;
+  let bCounter = 0;
+  for(let i = 0; i < 3; i++) {
+    if(a[i] > b[i]) {
+      aCounter++;
+    } else if(a[i] < b[i]) {
+      bCounter++;
+    }
+  }
+  return [aCounter, bCounter];
+  
 }
 function main() {
 
