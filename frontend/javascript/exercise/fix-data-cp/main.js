@@ -37,57 +37,40 @@
 
 function fixData(line) {
   // TODO: answer here
-   let vokal = ['a','i','u','e','o'];
-   let konsonan = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
-   let hasil = '';
-   let countVokal = 0;
-   let countKonsonan = 0;
-   let countVirus = 0;
-   
-   let arr = line.split('');
-   for(i = 0; i < arr.length; i++){
-      if(vokal == arr[i]){
-            countVokal++;
-      }
-      if(konsonan == arr[i]){
-            countKonsonan++;
-      }
-      if(line[i] == '#'){
-            countVirus++;
-      }
-   }
-   if(countVokal > countKonsonan){
-      for(j = 0; j < line.length; j++){
-         if(line[j] == '#'){
-            hasil += 'b';
-         }else{
-            hasil += line[j];
-         }
-      }
-   }else if(countVokal < countKonsonan){
-      for(k = 0; k < line.length; k++){
-         if(line[k] == '#'){
-            hasil += '';
-         }else{
-            hasil += line[k];
-         }
-      }
-   }
-   if(countVokal == countKonsonan){
-      for(l = 0; l < line.length; l++){
-         if(line[l] == '#'){
-            hasil += 'c';
-         }else{
-            hasil += line[l];
-         }
-      }
-   }
-   if(countVirus == 0){
-      hasil = line;
-   }
-   return hasil;
+   let vocal = 0;
+   let konsonan = 0;
+   let adaVirus = false;
+   let output = ''
 
+   for (let i = 0; i < line.length; i++) {
+       if (line[i] == 'a' || line[i] == 'i' || line[i] == 'u' || line[i] == 'e' || line[i] == 'o') {
+           vocal = vocal + 1;
+       } else if (line[i] != '#') {
+           konsonan = konsonan + 1;
+       }
+
+       if (line[i] == '#') adaVirus = true;
+   }
+
+   if (!adaVirus) return line;
+   let huruf = abc(vocal, konsonan);
+
+   for (let j = 0; j < line.length; j++) {
+       if (line[j] == '#') {
+           output = output + huruf;
+       } else {
+           output = output + line[j];
+       }
+   }
+   return output
 }
+
+function abc(vocal, konsonan) {
+   if (vocal > konsonan) return 'b'
+   if (vocal < konsonan) return 'a'
+   if (konsonan == vocal) return 'c'
+}
+
 
 console.log(fixData('aoi#fdg#ue'))
 console.log(fixData('eh#xyz#oi#'))
