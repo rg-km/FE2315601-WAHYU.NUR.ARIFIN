@@ -9,8 +9,8 @@
 function angkaPalindrome(num) {
   // TODO: answer here
   for(num; num <= 1000; num++){
-    var numString = num.toString();
-    var numStringReversed = numString.split('').reverse().join('');
+    let numString = num.toString();
+    let numStringReversed = numString.split('').reverse().join('');
     if(num <10){
       return 11;
     }else if(numString === numStringReversed){
