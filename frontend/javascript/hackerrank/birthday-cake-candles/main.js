@@ -14,6 +14,17 @@
 function birthdayCakeCandles(candles) {
   // Write your code here
 	// TODO: answer here
+  let tallest = 0;
+  let count = 0;
+  for(var i = 0; i < candles.length; i++) {
+    if(candles[i] > tallest) {
+      tallest = candles[i];
+      count = 1;
+    } else if(candles[i] === tallest) {
+      count++;
+    }
+  }
+  return count;
 }
 
 function main() {
