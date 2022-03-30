@@ -15,6 +15,23 @@
 function timeConversion(s) {
   // Write your code here
   // TODO: answer here
+  let ampm = s.charAt(8);
+  let newHour = "";
+
+  if (ampm === 'P') {
+    if (s.substring(0, 2) === '12') {
+      newHour = s.substring(0, 2);
+    }else{
+      newHour = parseInt(s.substring(0, 2)) + 12;
+  }
+  }else{
+    if (s.substring(0, 2) === '12') {
+      newHour = '00';
+    }else{
+      newHour = s.substring(0, 2);
+    }
+  }
+  return newHour + s.substring(2, 8);
 }
 
 function main() {
