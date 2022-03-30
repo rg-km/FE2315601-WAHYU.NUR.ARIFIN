@@ -14,6 +14,22 @@
 function gradingStudents(grades) {
   // Write your code here
   // TODO: answer here
+  var result = [];
+  for (let i = 0; i < grades.length; i++) {
+    let nilai = grades[i];
+    if (nilai < 38) {
+      result.push(nilai);
+    } else {
+      let pembulatan = nilai + (5 - nilai % 5);
+      if (pembulatan - nilai < 3) {
+        result.push(pembulatan);
+      } else {
+        result.push(nilai);
+      }
+    }
+  }
+  return result;
+
 }
 
 function main() {
