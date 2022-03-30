@@ -13,6 +13,19 @@
 function miniMaxSum(arr) {
   // Write your code here
   // TODO: answer here
+  let array = arr.sort();
+  let sum = 0;
+  let max = 0;
+  let min = 0;
+
+  for(var i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  
+  max = sum - array[0];
+  min = sum - array[array.length - 1];
+
+  return `${min} ${max}`;
 }
 
 function main() {
