@@ -8,6 +8,28 @@
 let calculator = {
   // Tulis kode di sini
   // TODO: answer here
+  
+  read() {
+    this.a = prompt("Masukkan nilai a");
+    this.b = prompt("Masukkan nilai b");
+  },
+  sum() {
+    let tambah = this.a + this.b;
+    return "a + b = " + tambah;
+  },
+  substract() {
+    let kurang = this.a - this.b;
+    return "a - b = " + kurang;
+  },
+  multiply() {
+    let kali = this.a * this.b;
+    return "a * b = " + kali;
+  },
+  division() {
+    let bagi =  this.a / this.b;
+    return "a / b = " + bagi;
+  }
+
 };
   
 calculator.read();
