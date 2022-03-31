@@ -10,8 +10,8 @@ let calculator = {
   // TODO: answer here
   
   read() {
-    this.a = prompt("Masukkan nilai a");
-    this.b = prompt("Masukkan nilai b");
+    this.a = +prompt("Masukkan nilai a");
+    this.b = +prompt("Masukkan nilai b");
   },
   sum() {
     let tambah = this.a + this.b;
