@@ -2,12 +2,12 @@
 Uncomment variable dibawah ini untuk mulai mengerjakan. dilarang mengganti nama variable yang dibuat.
 */
 
-// let quote = element untuk menampilkan quote
-// let author = element untuk menampilkan author
-// let citation = element untuk menampilkan citation
-// let year = element untuk menampilkan year
-// let button = tombol untuk melakuan generate random quote
-
+let quote = document.getElementById('random-quote');
+let author = document.getElementById('author');
+let citation = document.getElementById('citation');
+let year = document.getElementById('year');
+let button = document.getElementById('btn');
+// let button = document.getElementsByClassName('btn btn-generate btn-success');
 var quotes = [
 	{
 		quote: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
@@ -175,9 +175,23 @@ var quotes = [
 
 function getQuote() {
 	// TODO: answer here
+	let randomNumber = Math.floor(Math.random() * (quotes.length));
+	let randomQuote = quotes[randomNumber];
+	ranquote = randomQuote.quote;
+	ranauthor = randomQuote.author;
+	rancitation = randomQuote.citation;
+	ranyear = randomQuote.year;
+
+	quote.innerHTML = ranquote;
+	author.innerHTML = ranauthor;
+	citation.innerHTML = rancitation;
+	year.innerHTML = ranyear;
 }
 
 
 function displayQuote() {
 	// TODO: answer here
+	// document.getElementById("btn").addEventListener("click", getQuote);
+	button.addEventListener("click", getQuote);
+	// getQuote();
 }
