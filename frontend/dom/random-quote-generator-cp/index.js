@@ -182,10 +182,17 @@ function getQuote() {
 	rancitation = randomQuote.citation;
 	ranyear = randomQuote.year;
 
-	quote.innerHTML = ranquote;
-	author.innerHTML = ranauthor;
-	citation.innerHTML = rancitation;
-	year.innerHTML = ranyear;
+	if(rancitation === undefined && ranyear === undefined) {
+		quote.innerHTML = ranquote;
+		author.innerHTML = ranauthor;
+		citation.innerHTML = "";
+		year.innerHTML = "";
+	}else{
+		quote.innerHTML = ranquote;
+		author.innerHTML = ranauthor;
+		citation.innerHTML = rancitation;
+		year.innerHTML = ranyear;
+	}
 }
 
 
