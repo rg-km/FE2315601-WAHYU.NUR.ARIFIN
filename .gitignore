@@ -137,3 +137,6 @@ dist
 *.ans
 
 /node_modules
+
+cypress/videos
+cypress/screenshots

@@ -6,9 +6,15 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:cypress": "cypress run"
   },
   "devDependencies": {
+    "cypress": "^9.5.3",
     "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "prompt-sync-history": "^1.0.1"
   }
 }
