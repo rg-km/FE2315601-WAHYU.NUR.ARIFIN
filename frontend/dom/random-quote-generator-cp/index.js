@@ -187,6 +187,16 @@ function getQuote() {
 		author.innerHTML = ranauthor;
 		citation.innerHTML = "";
 		year.innerHTML = "";
+	}else if(rancitation === undefined) {
+		quote.innerHTML = ranquote;
+		author.innerHTML = ranauthor;
+		citation.innerHTML = "";
+		year.innerHTML = ranyear;
+	}else if(ranyear === undefined) {
+		quote.innerHTML = ranquote;
+		author.innerHTML = ranauthor;
+		citation.innerHTML = rancitation;
+		year.innerHTML = "";
 	}else{
 		quote.innerHTML = ranquote;
 		author.innerHTML = ranauthor;
@@ -199,6 +209,6 @@ function getQuote() {
 function displayQuote() {
 	// TODO: answer here
 	// document.getElementById("btn").addEventListener("click", getQuote);
-	button.addEventListener("click", getQuote);
-	// getQuote();
+	// button.addEventListener("click", getQuote);
+	getQuote();
 }
