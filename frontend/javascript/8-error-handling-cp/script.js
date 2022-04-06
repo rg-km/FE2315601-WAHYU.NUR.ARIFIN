@@ -30,5 +30,5 @@ function getMonthName(monthNumber) {
       getMonthName(15);
 
     } catch (error) {
-      console.log("Masukan salah. Input bulan antara 1-12");
+      console.log(error.message);
     }
