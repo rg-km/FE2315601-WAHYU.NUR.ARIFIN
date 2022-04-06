@@ -21,6 +21,14 @@ function getMonthName(monthNumber) {
   }
   
   // TODO: answer here
+    prompt = require('prompt-sync')();
     let myMonth = parseInt(prompt("Masukan bilangan: "));
     getMonthName(myMonth);
   // TODO: answer here
+    try {
+      getMonthName(3);
+      getMonthName(15);
+
+    } catch (error) {
+      console.log("Masukan salah. Input bulan antara 1-12");
+    }
