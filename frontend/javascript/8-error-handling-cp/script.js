@@ -9,4 +9,26 @@
 // Input: 15
 // Output: "Masukan salah. Input bulan antara 1-12"
 
+function getMonthName(monthNumber) {
+    monthNumber = monthNumber - 1;
+    let months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
+                  'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    if (months[monthNumber]) {
+      console.log("Bulan ke-" + (monthNumber + 1) + " adalah " + months[monthNumber])
+    } else {
+      throw new Error("Masukan salah. Input bulan antara 1-12");
+    }
+  }
+  
   // TODO: answer here
+    prompt = require('prompt-sync')();
+    let myMonth = parseInt(prompt("Masukan bilangan: "));
+    getMonthName(myMonth);
+  // TODO: answer here
+    try {
+      getMonthName(3);
+      getMonthName(15);
+
+    } catch (error) {
+      console.log(error.message);
+    }
