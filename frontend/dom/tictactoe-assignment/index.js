@@ -9,6 +9,19 @@ let winningCount = {
 //render scoreboard on x-wins and o-wins <label/>
 function renderScore() {
     // TODO: answer here
+    // document.getElementById("x-wins").textContent = winningCount["X"];
+    // document.getElementById("o-wins").textContent = winningCount["O"];
+
+    // if (winningCount["X"] == true) {
+    //     winningCount["X"] ++;
+    // }else if (winningCount["O"] == true) {
+    //     winningCount["O"] ++;
+    //     console.log(winningCount["O"])
+    // }
+    let scoreX = document.getElementById("x-wins");
+    let scoreO = document.getElementById("o-wins");
+    scoreX.innerHTML = winningCount.X;
+    scoreO.innerHTML = winningCount.O;
 }
 
 //check who the winner is, add the score to the scoreboard, and render the scoreboard
@@ -60,6 +73,7 @@ function checkNoWinner() {
         for (let j = 0; j < SIZE; j++) {
             if (getValue(i, j) == "") {
                 // TODO: answer here
+                return false;
             }
         }
     }
@@ -72,10 +86,19 @@ function click(event) {
     this.textContent = turn;
 
     if (turn == "X") {
-        // TODO: answer here
-    } else {
-        // TODO: answer here
+        turn = "O";
+        // td = document.getElementById(this.id);
+        // console.log(turn);
+    }else {
+        turn = "X";
+        // console.log(turn);
     }
+    // if (event.target.textContent == "") {
+    //     event.target.textContent = turn;
+    //     turn = turn == "X" ? "O" : "X";
+    //     checkWinner();
+    //     checkNoWinner();
+    // }
 
     checkWinner()
     if (checkNoWinner()) {
@@ -104,9 +127,12 @@ function generate() {
             button.style.width = BUTTON_SIZE;
             button.style.height = BUTTON_SIZE;
             // TODO: answer here
+            // button.addEventListener("click", click);
             button.id = i + "-" + j;
 
             td.appendChild(button);
+            let btn = document.getElementById(i + "-" + j);
+            button.addEventListener("click", click);
         }
     }
 
