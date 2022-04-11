@@ -138,5 +138,11 @@ dist
 
 /node_modules
 
+english-words.csv
+english-definition.csv
 cypress/videos
 cypress/screenshots
+
+# grader
+grader-config.json
+grader-cli

@@ -21,11 +21,12 @@ function getMonthName(monthNumber) {
   }
   
   // TODO: answer here
-    prompt = require('prompt-sync')();
-    let myMonth = parseInt(prompt("Masukan bilangan: "));
-    getMonthName(myMonth);
+    
   // TODO: answer here
     try {
+      prompt = require('prompt-sync')();
+      let myMonth = parseInt(prompt("Masukan bilangan: "));
+      getMonthName(myMonth);
       getMonthName(3);
       getMonthName(15);
 
