@@ -32,11 +32,15 @@ class Person {
     this.job = job;
   }
   getResult() {
-    return `${this.name} ${this.age} ${this.job}`;
+    return this.name, this.age, this.job;
   }
 } 
 
-const person = new Person('Wahyu Nur Arifin', '20', 'Frontend Engineer');
+const person = new Person();
+person.setName();
+person.setAge();
+person.setJob();
 console.log(person.getResult());
+
 
 module.exports = Person
