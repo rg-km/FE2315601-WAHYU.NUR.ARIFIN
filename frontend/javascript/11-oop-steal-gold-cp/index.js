@@ -50,10 +50,13 @@ class Player {
       this.setGold(this.getGold() + 5);
       this.setHasBeenRobbed(true);
       return `Berhasil mencuri 5 gold`;
+    } else if (player.getGold() < 5) {
+      return `Lawan terlalu miskin`;
     } else {
       this.setHasBeenRobbed(false);
       return `Gagal mencuri, coba lain kali`;
-    }
+    } 
+    
   }
 }
 
