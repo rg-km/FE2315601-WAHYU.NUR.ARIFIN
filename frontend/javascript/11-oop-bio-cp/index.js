@@ -13,6 +13,30 @@ class Person {
   }
   
   // TODO: answer here
-}
+  getName() {
+    return this.name;
+  }
+  getAge() {
+    return this.age;
+  }
+  getJob() {
+    return this.job;
+  }
+  setName(name) {
+    this.name = name;
+  }
+  setAge(age) {
+    this.age = age;
+  }
+  setJob(job) {
+    this.job = job;
+  }
+  getResult() {
+    return `${this.name} ${this.age} ${this.job}`;
+  }
+} 
+
+const person = new Person('Wahyu Nur Arifin', '20', 'Frontend Engineer');
+console.log(person.getResult());
 
 module.exports = Person
