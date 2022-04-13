@@ -27,43 +27,41 @@ class Thief extends Player {
   
   robbedBlind() {
     // TODO: answer here
-    if (this.getGold() > 10) {
+    if(this.getGold() < 10) {
+
+      return 'Aku terlalu miskin';
+    }else{
+      
       this.setGold(this.getGold() - 10);
       this.setStealChance(0.75);
-      
-      return null;
+  
+      return 'Berhasil mencuri 10 gold';
     }
-
-    return 'Aku terlalu miskin';
   }
 
   steal(player) {
     // TODO: answer here
-    if (player.job = 'Trickster') {
-      return player.distractionPurse(this);
+    if(player.getGold() < 5) {
+
+      return 'Lawan terlalu miskin';
     }
-    
-    if (this.getGold() < 10) {
-      return `Aku terlalu miskin`;
+    const random = this.randomizer();
+
+    if (random <= this.getStealChance()) {
+      player.setGold(player.getGold() - 5);
+      this.setGold(this.getGold() + 5);
+      player.setHasBeenRobbed(true);
+
+      if(player.job === 'Trickster') {
+        return player.distractionPurse(this);
+      }
+
+      return 'Berhasil mencuri 5 gold';
+
+    }else{
+      player.setHasBeenRobbed(false);
+      return 'Gagal mencuri, coba lain kali';
     }
-    
-    this.robbedBlind();
-    if (this.randomizer() > this.getStealChance()) {
-      return `Gagal mencuri, coba lain kali`;
-    }
-    
-    if (player.getGold() < 5) {
-      return `Lawan terlalu miskin`;
-    }
-    
-    this.setGold(this.getGold() + 5);
-    
-    player.setGold(player.getGold() - 5);
-    player.setHasBeenRobbed(true);
-    player.robbedBy(this);
-    
-    // this.setStealChance(0.25);
-    return `Berhasil mencuri 5 gold`;
   }
 }
 
@@ -90,65 +88,46 @@ class Trickster extends Player {
   }
 
   distractionPurse(player) {
-    if (this.randomizer() > this.getDistractionPurseChance()) {
-      return `Gagal mencuri balik`;
+    const rng = this.randomizer();
+    if (rng <= this.getDistractionPurseChance()) {
+      if (player.getGold() < 10) {
+        player.setGold(0)
+        this.setGold(this.getGold() + player.getGold());
+
+        return 'Berhasil mencuri balik semua uang lawan';
+
+      } else {
+        player.setGold(player.getGold() - 10);
+        this.setGold(this.getGold() + 10);
+
+        return 'Berhasil mencuri balik 10 gold';
+      }
+
+    } else {
+      return 'Gagal mencuri balik';
     }
-
-    if (player.getGold() < 10) {
-      this.setGold(this.getGold() + player.getGold());
-      player.setGold(0);
-      player.setHasBeenRobbed(true);
-      player.robbedBy(this);
-
-      return `Berhasil mencuri balik semua uang lawan`;
-    }
-
-    this.setGold(this.getGold() + 10);
-    player.setGold(player.getGold() - 10);
-        
-    return `Berhasil mencuri balik 10 gold`;
   }
 
   steal(player) {
     // TODO: answer here
-    if (this.randomizer() > this.getStealChance()) {
-      return `Gagal mencuri, coba lain kali`;
+    if(player.getGold() < 5) {
+      return 'Lawan terlalu miskin';
     }
 
-    if (player.getGold() < 5) {
-      return `Lawan terlalu miskin`;
+    let randomize = this.randomizer();
+    if (randomize < this.getStealChance()) {
+      player.setGold(player.getGold() - 5);
+      player.setHasBeenRobbed(true);
+      this.setGold(this.getGold() + 5);
+      if(player.job === 'Trickster') {
+        return player.distractionPurse(this);
+      }
+      return 'Berhasil mencuri 5 gold';
+    }else{
+      return 'Gagal mencuri, coba lain kali';
     }
-
-    player.setGold(player.getGold() - 5);
-    player.setHasBeenRobbed(true);
-    player.robbedBy(this);
-    this.setGold(this.getGold() + 5);
-
-    return `Berhasil mencuri 5 gold`;
   }
 }
-
-const p1 = new Thief("Fauzan");
-const p2 = new Trickster("Tegar");
-
-// p1.setGold(4);
-// p2.setGold(30);
-
-
-
-console.log('\n========Trickster dan thief==========');
-console.log('Jumlah gold Thief 1: ' + p1.getGold())
-console.log('Jumlah gold Trickster 2: ' + p2.getGold())
-
-p1.setStealChance(1);
-p2.setDistractionPurseChance(1);
-const message = p1.steal(p2);
-
-console.log('message : ' + message);
-// console.log(p1.steal(p2));
-console.log('Total gold Thief 1: ' + p1.getGold())
-console.log('Total gold Trickster 2: ' + p2.getGold())
-
 
 // Dilarang menghapus code dibawah ini!!!
 module.exports = {

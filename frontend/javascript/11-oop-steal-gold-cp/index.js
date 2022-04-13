@@ -40,9 +40,9 @@ class Player {
     this.hasBeenRobbed = status;
   }
 
-  robbedBy(culprit){
-    this.culprit = culprit;
-  }
+  // robbedBy(culprit){
+  //   this.culprit = culprit;
+  // }
   
   randomizer() {
     return +Math.random().toFixed(2);
