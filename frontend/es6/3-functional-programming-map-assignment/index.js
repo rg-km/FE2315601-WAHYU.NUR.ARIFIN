@@ -24,7 +24,6 @@
 
 const returnUserAverageScore = (students) => {
   // TODO: answer here
-<<<<<<< HEAD
   let result = [];
   for (let i = 0; i < students.length; i++) {
     let sum = 0;
@@ -38,8 +37,6 @@ const returnUserAverageScore = (students) => {
     });
   }
   return result;
-=======
->>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
 };
 
 module.exports = returnUserAverageScore

@@ -9,10 +9,7 @@
 
 function customisableGreeting(user, formatCallback) {
   // TODO: answer here
-<<<<<<< HEAD
   const formattedName = formatCallback(user);
-=======
->>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
   return `Hi name is ${formattedName}, how are you?`;
 }
 

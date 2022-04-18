@@ -13,7 +13,6 @@
 
 const checkOmnipresent = (array, valueToFind) => {
   // TODO: answer here
-<<<<<<< HEAD
   let result = false;
   for (let i of array) {
     if (i.includes(valueToFind)) {
@@ -23,8 +22,6 @@ const checkOmnipresent = (array, valueToFind) => {
     }
   }
   return result;
-=======
->>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
 };
 
 module.exports = checkOmnipresent

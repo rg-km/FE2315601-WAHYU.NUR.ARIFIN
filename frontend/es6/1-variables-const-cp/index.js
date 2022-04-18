@@ -4,12 +4,9 @@
 function constantNoChange() {
   const kota = "Tanggerang";
   // TODO: answer here
-<<<<<<< HEAD
   if (true) {
     kota = "Banyuwangi";
   }
-=======
->>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
 }
 
 module.exports = constantNoChange
