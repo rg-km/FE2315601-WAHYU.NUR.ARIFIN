@@ -11,8 +11,8 @@
 const convertElementToType = (array) => {
   // TODO: answer here
   let result = [];
-  for (let i = 0; i < array.length; i++) {
-    result.push(typeof array[i]);
+  for (let i of array) {
+    result.push(typeof i);
   }
   return result;
 };
