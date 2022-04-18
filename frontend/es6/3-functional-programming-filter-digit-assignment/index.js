@@ -11,7 +11,10 @@
 
 const filterDigit = (array, digit) => {
   // TODO: answer here
+<<<<<<< HEAD
   return array.filter(element => element.toString().length === digit);
+=======
+>>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
 };
 
 module.exports = filterDigit

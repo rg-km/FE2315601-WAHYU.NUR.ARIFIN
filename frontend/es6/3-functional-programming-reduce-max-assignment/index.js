@@ -9,6 +9,7 @@
 
 const maxFromArray = (numbers) => {
   // TODO: answer here
+<<<<<<< HEAD
   let max = numbers[0];
   for (let i = 1; i < numbers.length; i++) {
 
@@ -19,6 +20,8 @@ const maxFromArray = (numbers) => {
       max = max;
     }
   }
+=======
+>>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
   return max;
 };
 

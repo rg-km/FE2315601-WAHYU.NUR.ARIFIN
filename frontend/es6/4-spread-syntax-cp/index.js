@@ -9,6 +9,7 @@
  */
 const max = (...args) => {
   // TODO: answer here
+<<<<<<< HEAD
   let max = args[0];
   for (let i = 0; i < args.length; i++) {
     if (args[i] > max) {
@@ -16,6 +17,8 @@ const max = (...args) => {
     }
   }
   return max;
+=======
+>>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
 };
 
 module.exports = max

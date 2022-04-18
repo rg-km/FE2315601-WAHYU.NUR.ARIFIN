@@ -16,6 +16,7 @@
 
 const findAnimal = (bush) => {
   // TODO: answer here
+<<<<<<< HEAD
   let output = '';
 
   const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,6 +35,8 @@ const findAnimal = (bush) => {
   }
   
   return output;
+=======
+>>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
 };
 
 module.exports = findAnimal

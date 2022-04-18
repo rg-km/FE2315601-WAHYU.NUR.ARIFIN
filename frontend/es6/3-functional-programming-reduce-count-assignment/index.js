@@ -8,6 +8,7 @@
 
 const countRepetition = (numbers) => {
   // TODO: answer here
+<<<<<<< HEAD
   let repetition = {};
   numbers.forEach(number => {
     if (repetition[number]) {
@@ -16,6 +17,8 @@ const countRepetition = (numbers) => {
       repetition[number] = 1;
     }
   });
+=======
+>>>>>>> 466979049e6a25d12227dd7a51f55bb2aefac437
   return repetition;
 };
 
