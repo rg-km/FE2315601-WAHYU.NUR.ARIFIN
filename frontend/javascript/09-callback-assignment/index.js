@@ -49,11 +49,18 @@ const input = [
 
 const isOdd = (data) => {
   // TODO: answer here
+  return data.year % 2 === 1;
 };
 
 const groupBy = (array, callback) => array.reduce(
   (accumulator, dataValue) => {
     // TODO: answer here
+    let key = callback(dataValue);
+    if (!accumulator[key]) {
+      accumulator[key] = [];
+    }
+    accumulator[key].push(dataValue);
+    return accumulator;
   }, {}
 );
 
