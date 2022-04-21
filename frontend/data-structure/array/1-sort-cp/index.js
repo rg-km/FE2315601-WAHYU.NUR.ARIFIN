@@ -13,12 +13,37 @@
 // [1,2,3,4,5] -> [2,3,4,5,1] -> [3,4,5,1,2] -> [4,5,1,2,3] -> [5,1,2,3,4]
 
 function sort(arr) {
-    return arr // TODO: replace this
+    // return arr // TODO: replace this
+    let swapped = false;
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        //elemen bertukar
+        let tmp = arr[j + 1];
+        arr[j + 1] = arr[j];
+        arr[j] = tmp;
+        swapped = true;
+      }
+    }
+    if (!swapped) {
+      return arr;
+    }
+  }
+  return arr;
 }
 
 function rotateLeft(d, arr) {
-    return arr // TODO: replace this
+    // return arr // TODO: replace this
+    let length = arr.length;
+    let result = arr.slice(d, length); // [5]
+    for (let i = 0; i < d && i < length; i++) {
+        console.log({ elemennya: arr[i], i, result });
+ 
+        result.push(arr[i]);
+    }
+    return result;
 }
+
 
 let nums = [4, 5, 2, 1, 3]
 let sorted = sort(nums)
