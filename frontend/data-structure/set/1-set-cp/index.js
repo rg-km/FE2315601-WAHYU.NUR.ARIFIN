@@ -20,6 +20,7 @@ function intersection(setA, setB) {
             result.add(elem);
         }
     }
+    return result;
 }
 
 let setA = new Set(["Java", "Python", "Javascript", "C ++", "C#"]);
