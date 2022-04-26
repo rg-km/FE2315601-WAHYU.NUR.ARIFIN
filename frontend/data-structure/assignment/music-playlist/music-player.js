@@ -29,8 +29,8 @@ module.exports = class MusicPlayer {
         //     }
         //   }
         // this.playlist.songs.push(song);
-        
-        let music = new Song(song.singer, song.title)
+
+        let music = new Song(song.singer, song.title) //const Song Playlist dipakai
         let listToPlay = new Playlist([music], false)
         
         if (this.playlist.isEmpty()) {
