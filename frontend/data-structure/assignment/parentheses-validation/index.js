@@ -33,9 +33,9 @@ function IsValidParentheses(s) {
         let char = s[i]
 
         if (validation[char]) { // jika char buka kurung
-            stack.push(s[i])
+            stack.push(char)
 
-        } else if (validation[stack.peek()] === char) { 
+        } else if (validation[stack.peek()] === char) {// jika char tutup kurung
             stack.pop()
 
         } else { 
