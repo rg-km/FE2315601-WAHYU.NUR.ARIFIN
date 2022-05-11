@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "prompt-sync": "^4.2.0",
-    "prompt-sync-history": "^1.0.1"
+    "prompt-sync-history": "^1.0.1",
+    "axios": "^0.27.1"
   }
 }
