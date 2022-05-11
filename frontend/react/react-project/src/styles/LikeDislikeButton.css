@@ -1,0 +1,13 @@
+button {
+  margin: 1px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+}
+
+button:active {
+  background-color: grey;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+/*# sourceMappingURL=LikeDislikeButton.css.map */

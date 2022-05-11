@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAA;EACA,MAAM,EAAE,GAAG;EACX,aAAa,EAAE,IAAI;EACnB,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,KAAK;CACjB;;AAED,AAAA,MAAM,AAAA,OAAO,CAAA;EACP,gBAAgB,EAAE,IAAI;EACtB,SAAS,EAAE,eAAe;CAC/B",
+    "sources": [
+        "LikeDislikeButton.scss"
+    ],
+    "names": [],
+    "file": "LikeDislikeButton.css"
+}

@@ -10,11 +10,9 @@ import "../styles/Navbar.css"
 export default function Navbar() {
   // TODO: answer here
   return (
-  <nav className="navbar" aria-label="Navbar">
-      <h2 className="navbar-brand" href="/" data-id="brand" aria-label="App Title">
-        Instagram
-      </h2>
+  <div className="navbar" aria-label="Navbar">
+      <a className="navbar-brand" href="/" data-id="brand" aria-label="App Title">Instagram</a>
       <img className="brand-image" aria-label="App Logo" src="../logo512.png"></img>
-  </nav>
+  </div>
   )
 }

@@ -1,0 +1,35 @@
+.card-container {
+  width: 40%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 0px 10px -5px;
+          box-shadow: 0px 0px 10px -5px;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card-container .card-image {
+  overflow: hidden;
+  width: 60%px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.card-container .card-content {
+  margin: 1rem;
+  margin-top: 0,5rem;
+}
+
+.card-container .card-content .card-username {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+/*# sourceMappingURL=PostCard.css.map */
