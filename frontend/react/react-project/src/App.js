@@ -1,22 +1,24 @@
 import "./App.css"
-// TODO: answer here
+import React from "react"
+import Navbar from "./components/Navbar";
 
 function App() {
   // TODO: answer here
   return (
-    <div className="App">  
-      <header className="App-header">
-        <h1 aria-label="App Title">Instagram</h1>
+    <div>
+      <header>
+         <Navbar> </Navbar>
       </header>
 
-      <div className="App-container" aria-label="App">
-        <div className="App-content">
-          <h2>Post</h2>
-        </div>
-      </div>
-    </div>
+      <div className="container" aria-label="App">
+        
 
-  )
+      </div>
+
+    </div>
+    
+
+  );
 }
 
 export default App
