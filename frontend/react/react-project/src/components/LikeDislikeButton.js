@@ -2,13 +2,14 @@
 import React, { useState } from "react"
 import "../styles/LikeDislikeButton.css"
 
-export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, dislikeCount}) {
+export default function LikeDislikeButton(props) {
     // TODO: answer here
 
-    const [isLikedState, setIsLikedState] = useState(isLiked);
-    const [isDislikedState, setIsDislikedState] = useState(isDisliked);
-    const [likeCountState, setLikeCountState] = useState();
-    const [dislikeCountState, setDislikeCountState] = useState(dislikeCount);
+    const {id, image} = props;
+    const [isLiked, setIsLiked] = useState(true);
+    const [isDisliked, setIsDisliked] = useState(true);
+    const [likeCount, setLikeCount] = useState(0);
+    const [dislikeCount, setDislikeCount] = useState(0);
 
     return(
         <div className="post">
@@ -19,12 +20,14 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
                 <button 
                     aria-label = "Like Button"
                     onClick = {() => {
-                        if (isLikedState) {
-                            setIsLikedState(false);
-                            setLikeCountState(likeCountState - 1);
+                        if (isLiked) {
+                            setIsLiked(false);
+                            setIsDisliked(true);
+                            setLikeCount(likeCount + 1);
                         } else {
-                            setIsLikedState(true);
-                            setLikeCountState(likeCountState + 1);
+                            setIsLiked(true);
+                            setIsDisliked(false);
+                            setLikeCount(likeCount - 1);
                         }
                     }}
                 >Like  
@@ -32,19 +35,21 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
                 <input
                     type="text"
                     aria-label = "Like Count"
-                    value = {likeCountState}
+                    value = {likeCount}
                     disabled
                 ></input>
 
                 <button
                     aria-label = "Dislike Button"
                     onClick = {() => {
-                        if (isDislikedState) {
-                            setIsDislikedState(false);
-                            setDislikeCountState(dislikeCountState - 1);
+                        if (isDisliked) {
+                            setIsDisliked(false);
+                            setIsLiked(true);
+                            setDislikeCount(dislikeCount + 1);
                         } else {
-                            setIsDislikedState(true);
-                            setDislikeCountState(dislikeCountState + 1);
+                            setIsDisliked(true);
+                            setIsLiked(false);
+                            setDislikeCount(dislikeCount - 1);
                         }
                         
                     }}
@@ -53,7 +58,7 @@ export default function LikeDislikeButton({id, isLiked, isDisliked, likeCount, d
                 <input
                     type="text"
                     aria-label = "Dislike Count"
-                    value = {dislikeCountState}
+                    value = {dislikeCount}
                     disabled
                 ></input>
             </div>

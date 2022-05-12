@@ -9,3 +9,10 @@ button:active{
       background-color: grey;
       transform: translateY(3px);
 }
+
+textarea{
+      border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
