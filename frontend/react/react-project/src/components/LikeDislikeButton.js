@@ -1,67 +1,47 @@
 // TODO: answer here
 import React, { useState } from "react"
-import "../styles/LikeDislikeButton.css"
+// import "../styles/LikeDislikeButton.css"
 
-export default function LikeDislikeButton(props) {
+export default function LikeDislikeButton(id, isLiked, isDisliked, likeCount, dislikeCount) {
     // TODO: answer here
+    const [like, setLike] = useState(likeCount);
+    const [dislike, setDislike] = useState(dislikeCount);
+    const [likeStatus, setLikeStatus] = useState(isLiked);
+    const [dislikeStatus, setDislikeStatus] = useState(isDisliked);
+    
 
-    const {id, image} = props;
-    const [isLiked, setIsLiked] = useState(true);
-    const [isDisliked, setIsDisliked] = useState(true);
-    const [likeCount, setLikeCount] = useState(0);
-    const [dislikeCount, setDislikeCount] = useState(0);
+    const handleLike = () => {
+        setLikeStatus((curr) => (!curr));
+        if (likeStatus) {
+            return setLike(like - 1);
+        } 
+        setLike(like + 1);
+        setDislike(dislike - 1);
+    };
+
+    const handleDislike = () => {
+        setDislikeStatus((curr) => (!curr));
+        if (dislikeStatus) {
+            return setDislike(dislike - 1);
+        }
+        setLike(like - 1);
+        setDislike(dislike + 1);
+        
+    };
 
     return(
-        <div className="post">
-            {/* <div className="image-url">
-                <p>{image}http://blank</p>
-            </div> */}
-            <div className="likedislike">
-                <button 
-                    aria-label = "Like Button"
-                    onClick = {() => {
-                        if (isLiked) {
-                            setIsLiked(false);
-                            setIsDisliked(true);
-                            setLikeCount(likeCount + 1);
-                        } else {
-                            setIsLiked(true);
-                            setIsDisliked(false);
-                            setLikeCount(likeCount - 1);
-                        }
-                    }}
-                >Like  
-                </button>
-                <input
-                    type="text"
-                    aria-label = "Like Count"
-                    value = {likeCount}
-                    disabled
-                ></input>
+        <div>
+            <button aria-label="Like Button" onClick={handleLike}>
+                {likeStatus ? "like" : "unlike"}
+            </button>
 
-                <button
-                    aria-label = "Dislike Button"
-                    onClick = {() => {
-                        if (isDisliked) {
-                            setIsDisliked(false);
-                            setIsLiked(true);
-                            setDislikeCount(dislikeCount + 1);
-                        } else {
-                            setIsDisliked(true);
-                            setIsLiked(false);
-                            setDislikeCount(dislikeCount - 1);
-                        }
-                        
-                    }}
-                >Dislike
-                </button>
-                <input
-                    type="text"
-                    aria-label = "Dislike Count"
-                    value = {dislikeCount}
-                    disabled
-                ></input>
-            </div>
+            <button aria-label="Dislike Button" onClick={handleDislike}>
+                {dislikeCount ? "dislike" : "undislike"}
+            </button>
+
+            <h1 aria-label="Like Count">{like}</h1>
+            <h1 aria-label="Dislike Count">{dislike}</h1>
+
         </div>
     );
 

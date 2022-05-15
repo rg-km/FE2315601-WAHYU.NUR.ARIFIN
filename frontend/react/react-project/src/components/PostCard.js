@@ -1,7 +1,6 @@
 // TODO: answer here
-import React, { useState } from "react"
-import "../styles/PostCard.css"
-import LikeDislikeButton from "./LikeDislikeButton"
+import React from "react";
+import LikeDislikeButton from "./LikeDislikeButton";
 
 
 export default function PostCard({ image, caption, username, userId, date }) {
@@ -14,7 +13,7 @@ export default function PostCard({ image, caption, username, userId, date }) {
       </div>
 
       <div className="card-content">
-        <div className="card-like">
+        <div className="card-like" aria-label="">
           <LikeDislikeButton/>
         </div>
 
