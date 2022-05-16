@@ -1,6 +1,6 @@
 // TODO: answer here
 import React, { useState } from "react"
-// import "../styles/LikeDislikeButton.css"
+import "../styles/LikeDislikeButton.css"
 
 export default function LikeDislikeButton(id, isLiked, isDisliked, likeCount, dislikeCount) {
     // TODO: answer here
@@ -34,13 +34,20 @@ export default function LikeDislikeButton(id, isLiked, isDisliked, likeCount, di
             <button aria-label="Like Button" onClick={handleLike}>
                 {likeStatus ? "like" : "unlike"}
             </button>
+            <input
+                aria-label="Like Count"
+                type="text"
+                value={like}
+            ></input>
 
             <button aria-label="Dislike Button" onClick={handleDislike}>
                 {dislikeCount ? "dislike" : "undislike"}
             </button>
-
-            <h1 aria-label="Like Count">{like}</h1>
-            <h1 aria-label="Dislike Count">{dislike}</h1>
+            <input
+                aria-label="Dislike Count"
+                type="text"
+                value={dislike}
+            ></input>
 
         </div>
     );

@@ -1,6 +1,7 @@
 // TODO: answer here
 import React from "react";
 import LikeDislikeButton from "./LikeDislikeButton";
+import "../styles/PostCard.css";
 
 
 export default function PostCard({ image, caption, username, userId, date }) {
@@ -18,15 +19,15 @@ export default function PostCard({ image, caption, username, userId, date }) {
         </div>
 
         <div className="card-username" aria-label="Post User Name">
-          <span>{username} wahyunurarifin</span>
+          {username}
         </div>
 
         <div className="card-date" aria-label="Post Date">
-          <span>{date} 11 Mei 2022</span>
+          {date}
         </div>
 
         <div className="card-caption" aria-label="Post Caption">
-          <span>{caption} Aku seorang manusia yang mengembara di bumi ini hehe, mencari kitab suci menuju ke barat</span>
+          {caption}
         </div>  
       </div>
     </div>
