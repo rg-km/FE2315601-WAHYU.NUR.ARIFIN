@@ -20,22 +20,64 @@ const PodcastFormModal = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     // TODO: answer here
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
   };
 
   const handleFormSubmit = async () => {
     // TODO: answer here
+    try{
+      if (formModalType == "ADD") {
+        const podcastRes = await axios.post(`${Constants.API_URL}`);
+        if (podcastRes.status == 200) {
+          setPodcastList([...podcastList, formValues]);
+        }
+      }
+      if (formModalType == "UPDATE") {
+        const podcastRes = await axios.put(
+          `${Constants.API_URL}/${podcastId}`,
+          formValues
+        );
+        if (podcastRes.status == 200) {
+          const updatedIndex = podcastList.findIndex(
+            (item) => item.id == podcastId
+          );
+          podcastList.splice(updatedIndex, 1, formValues)
+          setPodcastList([...podcastList]);
+        }
+      }
+      setShowFormModal(false);
+      setFormModalType("ADD");
+    } catch (err) {
+      console.log("error fetch podcast by id", err);
+    }
   };
 
   const onCloseModal = () => {
     // TODO: answer here
+    setShowFormModal(false);
+    setFormModalType("ADD");
   };
 
   const getPodcastById = async () => {
     // TODO: answer here
+    try {
+      const podcastData = await axios.get(`${Constants.API_URL}/${podcastId}`);
+      if (podcastData.status == 200) {
+        setFormValues(podcastData.data);
+      }
+    } catch (err) {
+      console.log("error fetch podcast by id", err);
+    }
   };
 
   useEffect(() => {
     // TODO: answer here
+    if (formModalType == "UPDATE") {
+      getPodcastById();
+    }
   }, [showFormModal]);
 
   return (
