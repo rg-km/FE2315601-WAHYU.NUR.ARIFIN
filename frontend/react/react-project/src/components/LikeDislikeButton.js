@@ -60,12 +60,12 @@ export default function LikeDislikeButton({
       <button aria-label="Like Button" onClick={handleLike}>
         {likeStatus ? "unlike" : "like"}
       </button>
-      <h1 aria-label="Like Count">{like}</h1>
+      <p aria-label="Like Count">{like}</p>
 
       <button aria-label="Dislike Button" onClick={handleDislike}>
         {dislikeStatus ? "undislike" : "dislike"}
       </button>
-      <h1 aria-label="Dislike Count">{dislike}</h1>
+      <p aria-label="Dislike Count">{dislike}</p>
     </div>
   );
 }
