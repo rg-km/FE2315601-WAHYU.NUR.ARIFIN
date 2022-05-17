@@ -1,18 +1,18 @@
 import "./App.css"
-import React from "react"
 import Navbar from "./components/Navbar";
+import PostCard from "./components/PostCard";
 
 function App() {
   // TODO: answer here
+
   return (
     <div>
-      <header>
-         <Navbar> </Navbar>
-      </header>
-
-      <div className="container" aria-label="App">
+      <div className="box-container" aria-label="App">
+        <header>
+          <Navbar />
+        </header>
         
-
+        <PostCard />
       </div>
 
     </div>
