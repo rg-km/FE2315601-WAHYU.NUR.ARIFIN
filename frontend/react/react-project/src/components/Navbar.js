@@ -8,26 +8,30 @@ import { SessionContext } from "../context/SessionContext"
 import "../styles/Navbar.css"
 
 const Button = () => {
-    const { isLoggedIn, user, setUser, setIsLoggedIn } = useContext(SessionContext)
+    const isLoggedIn = useContext(SessionContext).isLoggedIn;
+    const setIsLoggedIn = useContext(SessionContext).setIsLoggedIn
 
-    return (
-        <div className="navbar-button">
-            {isLoggedIn ? (
+    const renderLog = (isLoggedIn) => {
+        if (isLoggedIn) {
+            return (
                 <button onClick={() => {
                     setIsLoggedIn(false)
-                    setUser({})
-                }}>Logout</button>
-            ) : (
+                    auth.signOut()
+                }}>
+                    Logout
+                </button>
+            )
+        } else {
+            return (
                 <button onClick={() => {
-                    auth().then(res => {
-                        setUser(res.user)
-                        setIsLoggedIn(true)
-                    })
-                }}>Login</button>
-            )}
-        </div>
-
-    )
+                    setIsLoggedIn(true)
+                    auth.signInWithPopup()
+                }}>
+                    Login
+                </button>
+            )
+        }
+    }
 }
 
 export default function Navbar() {
@@ -37,7 +41,9 @@ export default function Navbar() {
       <a className="navbar-brand" href="/" data-id="brand" aria-label="App Title">Instagram</a>
       <img className="brand-image" aria-label="App Logo" src="../logo512.png"></img>
       
-        <Button />
+      <button onClick={() => {renderLog(isLoggedIn)}} aria-label="Toggle navigation">
+            {renderLog(isLoggedIn)}
+      </button>
   </div>
   )
 }

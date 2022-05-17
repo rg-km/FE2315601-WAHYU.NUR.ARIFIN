@@ -16,10 +16,10 @@ export const SessionProvider = ({ children }) => {
   return (
     <SessionContext.Provider
       value={{
-        isLoggedIn,
-        user,
-        setUser,
-        setIsLoggedIn
+        isLoggedIn: isLoggedIn,
+        user: user,
+        setUser: setUser,
+        setIsLoggedIn: setIsLoggedIn
       }}
     >
       {children}
