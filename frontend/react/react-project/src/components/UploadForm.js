@@ -16,16 +16,37 @@ export default function UploadForm({onSubmit}) {
 
   function submit(e){
     e.preventDefault();
-    Axios.post(url,{
-      caption:data.caption,
-      image:data.image
+    const formData = new FormData();
+    let data1 =  data.indexList;
+    data1.map(item => {
+      formData.append("content", data.caption);
+      formData.append("image", data.image);
+    });
+    Axios.post(url, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
     })
     .then(res => {
-      onSubmit(res.data);
+      onSubmit();
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      console.log(err);
+    });
   }
+    
+    // Axios.post(url,{
+    //   caption:data.caption,
+    //   image:data.image
+    // })
+    // .then(res => {
+    //   onSubmit(res.data);
+    // })
+    // .catch(err => console.log(err));
   
+  
+  
+
   return (
     <div className="upload-form" aria-label="Upload Form">
       <form onSubmit = {(e)=> submit(e)} >
