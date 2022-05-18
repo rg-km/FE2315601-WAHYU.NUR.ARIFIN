@@ -10,11 +10,28 @@ const ToggleButton = () =>{
     const changeTheme = (theme) =>{
         //mengubah tema dari toggleButton
         // TODO: answer here
+        if (theme === "dark") {
+            setTheme("light")
+        } else {
+            setTheme("dark")
+        }
     }
 
     const renderToggleButtonText = (theme) =>{
         //mengubah tulisan dari toggleButton
         // TODO: answer here
+        if (theme === "dark") {
+            return {
+                setTheme: ["dark"],
+                buttonText: ('Toggle Light Theme')
+            }
+        }else{
+            return {
+                setTheme: ["light"],
+                buttonText: ('Toggle Dark Theme')
+            }
+        }
+        
     }
 
     return(
@@ -23,7 +40,7 @@ const ToggleButton = () =>{
                 <input data-testid="toggle-button" className={styles['input']}  type="checkbox" onChange={()=>{changeTheme(theme)}}/>
                 <span className={`${styles['slider']} ${styles['round']}`}></span>
             </label>
-            <p data-testid="toggle-button-text">{renderToggleButtonText(theme)}</p>
+            <p data-testid="toggle-button-text">{renderToggleButtonText(theme).buttonText}</p>
         </div>
     )
 }

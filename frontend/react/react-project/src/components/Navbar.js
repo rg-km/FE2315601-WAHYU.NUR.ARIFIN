@@ -7,43 +7,39 @@ import { SessionContext } from "../context/SessionContext"
 
 import "../styles/Navbar.css"
 
-const Button = () => {
-    const isLoggedIn = useContext(SessionContext).isLoggedIn;
-    const setIsLoggedIn = useContext(SessionContext).setIsLoggedIn
-
-    const renderLog = (isLoggedIn) => {
-        if (isLoggedIn) {
-            return (
-                <button onClick={() => {
-                    setIsLoggedIn(false)
-                    auth.signOut()
-                }}>
-                    Logout
-                </button>
-            )
-        } else {
-            return (
-                <button onClick={() => {
-                    setIsLoggedIn(true)
-                    auth.signInWithPopup()
-                }}>
-                    Login
-                </button>
-            )
-        }
-    }
-}
 
 export default function Navbar() {
   // TODO: answer here
+  const [user, setUser] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const fetchSession = async () => {
+        await getSession().then((res) => {
+            setUser(res.data.user);
+            setIsLoggedIn(res.data.isLoggedIn);
+            }
+        );
+    };     
+  }, [])
+
+  const handleClick = () => {
+    setUser({});
+    setIsLoggedIn(true);
+  }
+
+
   return (
   <div className="navbar" aria-label="Navbar">
       <a className="navbar-brand" href="/" data-id="brand" aria-label="App Title">Instagram</a>
       <img className="brand-image" aria-label="App Logo" src="../logo512.png"></img>
       
-      <button onClick={() => {renderLog(isLoggedIn)}} aria-label="Toggle navigation">
-            {renderLog(isLoggedIn)}
-      </button>
+      <button
+        aria-label="Login"
+        onClick={handleClick}
+        >
+        Login
+        </button>
   </div>
   )
 }
