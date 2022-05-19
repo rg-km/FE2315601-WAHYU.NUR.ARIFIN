@@ -7,6 +7,7 @@ import PeopleDetail from "./routes/PeopleDetail";
 // TODO: answer here
 import NotFound from "./routes/NotFound";
 import "./App.css";
+import PlanetDetail from "./routes/PlanetDetail";
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
           <Route path=":id" element={<PeopleDetail />} />
         </Route>
         {/* TODO: answer here */}
-        <Route path="*" element={<NotFound />} />
+        <Route path="planets" element={<PlanetDetail />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

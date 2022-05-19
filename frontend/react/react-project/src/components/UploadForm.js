@@ -31,9 +31,10 @@ export default function UploadForm({ onSubmit }) {
   function submit(e) {
     e.preventDefault();
     const formData = new FormData();
-
-    formData.append("image", data.image);
+    
     formData.append("content", data.caption);
+    formData.append("image", data.image);
+    
 
     createPost(formData);
   }
