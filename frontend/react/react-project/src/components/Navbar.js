@@ -16,10 +16,13 @@ export default function Navbar() {
   useEffect(() => {
     const fetchSession = async () => {
       await getSession().then((res) => {
-        
-        if (res.data.user) {
-          setUser(res.data.user)
-          setIsLoggedIn(true)
+        try{
+          if (res.data.user) {
+            setUser(res.data.user)
+            setIsLoggedIn(true)
+          }
+        } catch(err) {
+          console.log(err)
         }
       })
     }
