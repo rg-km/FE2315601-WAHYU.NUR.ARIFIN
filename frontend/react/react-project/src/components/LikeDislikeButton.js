@@ -14,11 +14,7 @@ export default function LikeDislikeButton({
   const [dislike, setDislike] = useState(dislikeCount);
   const [likeStatus, setLikeStatus] = useState(isLiked);
   const [dislikeStatus, setDislikeStatus] = useState(isDisliked);
-  const urllike = (`${API_URL}/post/123/like`);
-  const urldislike = (`${API_URL}/post/123/dislike`);
-  const urlunlike = (`${API_URL}/post/123/unlike`);
-  const urlundislike = (`${API_URL}/post/123/undislike`);
-
+  
   const handleLike = () => {
     // cek like status
     if (likeStatus) {
