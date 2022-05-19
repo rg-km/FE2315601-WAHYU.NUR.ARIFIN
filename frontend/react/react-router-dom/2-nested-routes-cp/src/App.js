@@ -7,23 +7,36 @@ import PeopleDetail from "./routes/PeopleDetail";
 // TODO: answer here
 import NotFound from "./routes/NotFound";
 import "./App.css";
+import Planets from "./routes/Planets";
 import PlanetDetail from "./routes/PlanetDetail";
+import MovieDetail from "./routes/MovieDetail";
+import Movies from "./routes/Movies";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="star-wars" element={<Main />}>
-        <Route path="people">
-          <Route index element={<People />} />
-          <Route path=":id" element={<PeopleDetail />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="star-wars" element={<Main />}>
+          <Route path="people">
+            <Route index element={<People />} />
+            <Route path=":id" element={<PeopleDetail />} />
+          </Route>
+          
+          <Route path="planets">
+            <Route index element={<Planets />} />
+            <Route path=":id" element={<PlanetDetail />} />
+          </Route>
+   
+          <Route path="movies">
+            <Route index element={<Movies />} />
+            <Route path=":id" element={<MovieDetail />} />
+          </Route>
+          
+          <Route path="*" element={<NotFound />} />
         </Route>
-        {/* TODO: answer here */}
-        <Route path="planets" element={<PlanetDetail />} />
-      </Route>
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    );
 };
 
 export default App;

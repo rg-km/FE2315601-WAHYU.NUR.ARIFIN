@@ -16,6 +16,9 @@ const Planets = () => {
         signal: controller.signal,
       });
       // TODO: answer here
+      setPlanets(data.results);
+      console.log({ data });
+
     } catch (error) {
       console.log(error);
     }
@@ -52,6 +55,11 @@ const Planets = () => {
           {planets.length &&
             planets.map((planet, index) => (
               // TODO: answer here
+              <Link to={`/star-wars/planets/${getID(planet.url)}`}>
+                <div className="card" key={index}>
+                  <p>{planet.name}</p>
+                </div>
+              </Link>
             ))}
         </div>
       ) : (
