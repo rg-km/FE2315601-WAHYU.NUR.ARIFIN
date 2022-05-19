@@ -4,6 +4,9 @@ import React from "react"
 import { getSession, auth } from "../api/auth"
 import { useContext } from "react"
 import { SessionContext } from "../context/SessionContext"
+import axios from "axios";
+import { API_URL } from "../api/config"  
+
 
 import "../styles/Navbar.css"
 
