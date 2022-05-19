@@ -1,6 +1,7 @@
 import "./App.css"
 import Navbar from "./components/Navbar";
 import PostCard from "./components/PostCard";
+import UploadForm from "./components/UploadForm";
 
 function App() {
   // TODO: answer here
@@ -13,6 +14,7 @@ function App() {
         </header>
         
         <PostCard />
+        <UploadForm/>
       </div>
 
     </div>

@@ -14,7 +14,7 @@ export default function LikeDislikeButton({
   const [dislike, setDislike] = useState(dislikeCount);
   const [likeStatus, setLikeStatus] = useState(isLiked);
   const [dislikeStatus, setDislikeStatus] = useState(isDisliked);
-
+  
   const handleLike = () => {
     // cek like status
     if (likeStatus) {

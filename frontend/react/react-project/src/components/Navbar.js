@@ -10,36 +10,42 @@ import "../styles/Navbar.css"
 
 export default function Navbar() {
   // TODO: answer here
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const fetchSession = async () => {
-        await getSession().then((res) => {
-            setUser(res.data.user);
-            setIsLoggedIn(res.data.isLoggedIn);
-            }
-        );
-    };     
+      await getSession().then((res) => {
+        try{
+          if (res.data.user) {
+            setUser(res.data.user)
+            setIsLoggedIn(true)
+          }
+        } catch(err) {
+          console.log(err)
+        }
+      })
+    }
+    fetchSession()
   }, [])
 
-  const handleClick = () => {
-    setUser({});
-    setIsLoggedIn(true);
-  }
-
-
+  
   return (
   <div className="navbar" aria-label="Navbar">
       <a className="navbar-brand" href="/" data-id="brand" aria-label="App Title">Instagram</a>
       <img className="brand-image" aria-label="App Logo" src="../logo512.png"></img>
       
-      <button
-        aria-label="Login"
-        onClick={handleClick}
+      {isLoggedIn ? (
+        <p aria-label="Profile">{user.name}</p>
+        // <p aria-label="Profile">test</p>
+      ) : (
+        <button
+          aria-label="Login"
+          onClick={auth}
         >
-        Login
+          Login
         </button>
+      )}
   </div>
   )
 }
