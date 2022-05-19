@@ -4,22 +4,37 @@ import React from "react"
 import { getSession, auth } from "../api/auth"
 import { useContext } from "react"
 import { SessionContext } from "../context/SessionContext"
-import Profile from "./Profile"
 
 import "../styles/Navbar.css"
 
 
 export default function Navbar() {
   // TODO: answer here
+  const [user, setUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const fetchSession = async () => {
+      await getSession().then((res) => {
+        
+        if (res.data.user) {
+          setUser(res.data.user)
+          setIsLoggedIn(true)
+        }
+      })
+    }
+    fetchSession()
+  }, [])
+
+  
   return (
   <div className="navbar" aria-label="Navbar">
       <a className="navbar-brand" href="/" data-id="brand" aria-label="App Title">Instagram</a>
       <img className="brand-image" aria-label="App Logo" src="../logo512.png"></img>
       
       {isLoggedIn ? (
-        <Profile/>
+        <p aria-label="Profile">{user.name}</p>
+        // <p aria-label="Profile">test</p>
       ) : (
         <button
           aria-label="Login"
