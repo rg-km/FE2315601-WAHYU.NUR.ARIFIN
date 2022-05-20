@@ -17,14 +17,14 @@ export default function LikeDislikeButton({
   const [likeStatus, setLikeStatus] = useState(isLiked);
   const [dislikeStatus, setDislikeStatus] = useState(isDisliked);
 
-  const urllike = `${API_URL}/post/123/like`;
-  const urldislike = `${API_URL}/post/123/dislike`;
-  const urlunlike = `${API_URL}/post/123/unlike`;
-  const urlundislike = `${API_URL}/post/123/undislike`;
+  const urllike = `${API_URL}/post/${id}/like`;
+  const urldislike = `${API_URL}/post/${id}/dislike`;
+  const urlunlike = `${API_URL}/post/${id}/unlike`;
+  const urlundislike = `${API_URL}/post/${id}/undislike`;
   
   const handleLike = () => {
     // cek like status
-    async function likepost(data) {
+    async function likepost() {
       try {
         const likepost = await axios.get(urllike, { withCredentials: true });
         if (likepost?.message == "success") {
@@ -35,7 +35,7 @@ export default function LikeDislikeButton({
       }
     }
     
-    async function unlikepost(data) {
+    async function unlikepost() {
       try {
         const unlikepost = await axios.get(urlunlike, { withCredentials: true });
         if (unlikepost?.message == "success") {
@@ -67,7 +67,7 @@ export default function LikeDislikeButton({
 
   const handleDislike = () => {
     // cek like status
-    async function dislikepost(data) {
+    async function dislikepost() {
       try {
         const dislikepost = await axios.get(urldislike, { withCredentials: true });
         if (dislikepost?.message == "success") {
@@ -78,7 +78,7 @@ export default function LikeDislikeButton({
       }
     }
     
-    async function undislikepost(data) {
+    async function undislikepost() {
       try {
         const undislikepost = await axios.get(urlundislike, { withCredentials: true });
         if (undislikepost?.message == "success") {

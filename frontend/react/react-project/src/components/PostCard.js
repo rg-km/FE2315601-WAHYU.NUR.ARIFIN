@@ -16,8 +16,8 @@ export default function PostCard({ image, caption, username, userId, date }) {
       <div className="card-content">
         <div className="card-like" aria-label="">
           <LikeDislikeButton
-            likeCount={278}
-            dislikeCount={289}
+            likeCount={0}
+            dislikeCount={0}
             isLiked={true}
             isDisliked={false}
           />
