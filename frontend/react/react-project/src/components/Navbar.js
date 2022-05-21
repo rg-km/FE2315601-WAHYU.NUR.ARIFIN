@@ -15,7 +15,7 @@ export default function Navbar() {
   // TODO: answer here
   const [user, setUser] = useState({})
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [listPost, setListpost] = useState([])
+  
 
   useEffect(() => {
     const fetchSession = async () => {
@@ -33,19 +33,20 @@ export default function Navbar() {
     fetchSession()
   }, [])
 
-  async function postList(post) {
-    try {
-      const listPost = await axios.get(`${API_URL}/post/list`, post, { withCredentials: true });
-      if (listPost?.message == "success") {
-        return listPost;
-      }
-    } catch (error) {
-      console.log("can't create post", error);
-    }
-  }
+  // async function postList(post) {
+  //   try {
+  //     const listPost = await axios.get(`${API_URL}/post/list`, post, { withCredentials: true });
+  //     if (listPost?.message == "success") {
+  //       return listPost;
+  //     }
+  //   } catch (error) {
+  //     console.log("can't create post", error);
+  //   }
+  // }
+  
 
-  listPost.map((post) => <PostCard image={post.image} content={post.content} />)
-  console.log(listPost)
+  // listPost.map((post) => <PostCard image={post.image} content={post.content} />)
+  // console.log(listPost)
 
   return (
   <div className="navbar" aria-label="Navbar">

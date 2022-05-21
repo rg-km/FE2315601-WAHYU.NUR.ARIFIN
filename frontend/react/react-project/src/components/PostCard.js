@@ -8,7 +8,9 @@ export default function PostCard({ image, caption, username, userId, date }) {
   // TODO: answer here
 
   return (
+    <div className="row">
     <div className="card-container" aria-label="Post Card">
+
       <div className="card-image">
         <img src={image} alt="post-image" aria-label="Post Image" />
       </div>
@@ -35,6 +37,7 @@ export default function PostCard({ image, caption, username, userId, date }) {
           {caption}
         </div>
       </div>
+    </div>
     </div>
   );
 }
