@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { API_URL } from "../api/config" 
 
-export default function UploadForm({ onSubmit }) {
+export default function UploadForm({ onSubmit, refetchListPost }) {
   // const url = "https://rg-km.riegan.my.id/api/post/create";
   const [data, setData] = useState({
     caption: "",
@@ -20,12 +20,12 @@ export default function UploadForm({ onSubmit }) {
   async function createPost(data) {
     try {
       const postData = await Axios.post(`${API_URL}/post/create`, data, { withCredentials: true });
-      if (postData?.message == "success") {
-        return postData;
-      }
+      refetchListPost();
+      setData({ caption: "", image: null });
     } catch (error) {
       console.log("can't create post", error);
     }
+    
   }
 
   function submit(e) {
