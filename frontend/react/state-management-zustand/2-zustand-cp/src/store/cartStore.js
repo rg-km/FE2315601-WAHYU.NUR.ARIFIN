@@ -15,18 +15,15 @@ const cartQuantityMiddleware = (config) => (set, get, api) =>
       if (moreThanStockItem.length > 0) {
         return set((state) => ({
           items: state.items.map((item) =>
-            item.id === moreThanStockItem[0].id
-              ? { ...item, quantity: item.stock }
-              : item,
+            item.id === moreThanStockItem[0].id ? { ...item, quantity: item.stock } : item,
           ),
         }))
       }
+
       if (lessThanZeroItem.length > 0) {
         return set((state) => ({
           items: state.items.map((item) =>
-            item.id === lessThanZeroItem[0].id
-              ? { ...item, quantity: 1 }
-              : item,
+            item.id === lessThanZeroItem[0].id ? { ...item, quantity: 1 } : item,
           ),
         }))
       }
