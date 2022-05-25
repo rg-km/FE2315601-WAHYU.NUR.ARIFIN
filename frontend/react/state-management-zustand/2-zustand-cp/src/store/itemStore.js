@@ -13,7 +13,7 @@ const useItemStore = create(persist((set) => ({
           
           removeItem: (itemId) => {
             set((state) => ({
-              items: state.items.filter((i) => i.id !== itemId),
+              items: state.items.filter((index) => index.id !== itemId),
             }))
           },
         }),
