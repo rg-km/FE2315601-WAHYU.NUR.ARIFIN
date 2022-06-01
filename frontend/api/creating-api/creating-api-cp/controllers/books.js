@@ -53,17 +53,18 @@ export const getBook = (req, res) => {
 };
 
 export const deleteBook = (req, res) => {
-  // TODO: answer here
-  const bookItem = books.find((book) => book.id == req.params.id);
-  if (bookItem) {
-    books = books.filter((book) => book.id != req.params.id);
+  // TODO: answer here 
+  const findBook = books.find((book) => book.id === req.params.id);
+ 
+  if (findBook) {
+    books = books.filter((book) => book.id !== req.params.id);
     res.status(200).json({
       success: true,
-      message: `book with id ${req.params.id} deleted`,
-      data: bookItem
+      message: `book with id ${req.params.id} has been deleted`,
+      data: books
     });
   } else {
-    res.status(500).json({
+    res.status(404).json({
       message: `book with id ${req.params.id} not found`
     });
   }
@@ -71,17 +72,14 @@ export const deleteBook = (req, res) => {
 
 export const updateBook = (req, res) => {
   // TODO: answer here
-  const bookItem = books.find((book) => book.id == req.params.id);
-  if (bookItem) {
-    const updatedBook = { ...bookItem, ...req.body };
-    books = books.map((book) => (book.id == req.params.id ? updatedBook : book));
-    res.status(200).json({
-      success: true,
-      message: `book with id ${req.params.id} updated`,
-      data: updatedBook
-    });
-  }
-  res.status(500).json({
-    message: `book with id ${req.params.id} not found`
+  const findBook = books.find((book) => book.id === req.params.id);
+ 
+  findBook.title = req.body.title;
+  findBook.author = req.body.author;
+ 
+  res.status(200).json({
+    success: true,
+    message: `title has been updated to ${req.body.title}.author has been updated to ${req.body.author}`,
+    data: findBook
   });
 };
